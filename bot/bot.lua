@@ -228,10 +228,10 @@ function create_config( )
       "time",
       "version",
       "weather",
+      "9gag",
       "youtube",
       "media_handler",
-      "moderation",
-      "9gag"
+      "moderation"},
     sudo_users = {our_id},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
