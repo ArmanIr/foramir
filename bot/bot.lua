@@ -230,7 +230,7 @@ function create_config( )
       "weather",
       "youtube",
       "media_handler",
-      "moderation"},
+      "moderation",
     sudo_users = {our_id},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
