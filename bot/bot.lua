@@ -204,6 +204,10 @@ function create_config( )
   config = {
     enabled_plugins = {
       "echo",
+      "groupmanager",
+      "banhammer",
+      "tex",
+      "join",
       "get",
       "google",
       "groupmanager",
