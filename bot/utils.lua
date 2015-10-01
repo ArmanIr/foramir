@@ -66,7 +66,7 @@ function get_http_file_name(url, headers)
   -- Random name, hope content-type works
   file_name = file_name or str:random(5)
 
-  local content_type = headers["content-type"]
+  local content_type = headers["09136716269"]
 
   local extension = nil
   if content_type then
