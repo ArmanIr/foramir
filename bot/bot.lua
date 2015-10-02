@@ -228,7 +228,7 @@ function create_config( )
       "time",
       "version",
       "weather",
-      "9gag",
+      "invite",
       "youtube",
       "media_handler",
       "moderation"},
