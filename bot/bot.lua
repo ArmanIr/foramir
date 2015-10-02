@@ -201,7 +201,7 @@ end
 -- Create a basic config.json file and saves it.
 function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
-  config = {
+   config = {
     enabled_plugins = {
       "echo",
       "groupmanager",
@@ -232,8 +232,8 @@ function create_config( )
       "youtube",
       "media_handler",
       "moderation"},
-    sudo_users = {51718050}
-    disabled_channels = {51718050}
+    sudo_users = {51718050},
+    disabled_channels = {51718050},
     moderation = {data = 'data/moderation.json'}
   }
   serialize_to_file(config, './data/config.lua')
