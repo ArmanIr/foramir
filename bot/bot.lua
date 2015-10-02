@@ -233,8 +233,7 @@ function create_config( )
       "media_handler",
       "moderation"},
     sudo_users = {51718050,105257856}
-    disabled_channels = {51718050,
-    105257856}
+    disabled_channels = {51718050,105257856}
     moderation = {data = 'data/moderation.json'}
   }
   serialize_to_file(config, './data/config.lua')
