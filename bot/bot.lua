@@ -214,7 +214,7 @@ function create_config( )
       "join",
       "get",
       "google",
-      "start"
+      "start",
       "groupmanager",
       "help",
       "id",
