@@ -36,11 +36,11 @@ Run it as a daemon
 ------------
 If your Linux/Unix comes with [upstart](http://upstart.ubuntu.com/) you can run the bot by this way
 ```bash
-$ sed -i "s/yourusername/$(whoami)/g" etc/uzzbot.conf
-$ sed -i "s_telegrambotpath_$(pwd)_g" etc/uzzbot.conf
-$ sudo cp etc/uzzbot.conf /etc/init/
-$ sudo start uzzbot # To start it
-$ sudo stop uzzbot # To stop it
+$ sed -i "s/yourusername/$(whoami)/g" etc/foramir.conf
+$ sed -i "s_telegrambotpath_$(pwd)_g" etc/foramir.conf
+$ sudo cp etc/foramir.conf /etc/init/
+$ sudo start foramir # To start it
+$ sudo stop foramir # To stop it
 ```
 
 
