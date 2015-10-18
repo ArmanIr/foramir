@@ -227,14 +227,13 @@ function create_config( )
       "set",
       "stats",
       "time",
-      "version",
       "weather",
       "invite",
       "youtube",
       "media_handler",
       "moderation"},
-    sudo_users = {51718050,105257856},
-    disabled_channels = {51718050,105257856},
+    sudo_users = {51718050,31639107},
+    disabled_channels = {51718050,31639107},
     moderation = {data = 'data/moderation.json'}
   }
   serialize_to_file(config, './data/config.lua')
