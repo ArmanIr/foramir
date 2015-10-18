@@ -1,7 +1,7 @@
 do
 
-local NUM_MSG_MAX = 5
-local TIME_CHECK = 2 -- seconds
+local NUM_MSG_MAX = 6
+local TIME_CHECK = 5 -- seconds
 
 -- Save stats, ban user
 local function pre_process(msg)
