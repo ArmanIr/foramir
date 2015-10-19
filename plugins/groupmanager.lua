@@ -5,14 +5,15 @@ do
 local function create_group(msg)
     -- superuser and admins only (because sudo are always has privilege)
     
+    
     local group_creator = msg.from.print_name
     create_group_chat (group_creator, group_name, ok_cb, false)
-	return 'گروهـ '..string.gsub(group_name, '_', ' ')..' ساختهـ شد.'
+	return 'Group '..string.gsub(group_name, '_', ' ')..' has been created.'
 end
 
 local function set_description(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "اینـ بخشـ فقط برای ادمینـ فعال استـ!"
     end
     local data_cat = 'description'
 	data[tostring(msg.to.id)][data_cat] = deskripsi
@@ -55,83 +56,83 @@ end
 -- lock/unlock group name. bot automatically change group name when locked
 local function lock_group_name(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
     local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
 	if group_name_lock == 'yes' then
-	    return 'اسمـ گروهـ قفل شد😃'
+	    return 'اسمـ گروهـ قبلا قفلـ شدهـ است'
 	else
 	    data[tostring(msg.to.id)]['settings']['lock_name'] = 'yes'
 	    save_data(_config.moderation.data, data)
 	    data[tostring(msg.to.id)]['settings']['set_name'] = string.gsub(msg.to.print_name, '_', ' ')
 	    save_data(_config.moderation.data, data)
-	return 'اسمـ گروهـ قفلـ شد😉'
+	return 'اسم گروه قفل شـد'
 	end
 end
 
 local function unlock_group_name(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
     local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
 	if group_name_lock == 'no' then
-	    return 'اسمـ گروه باز شد😉'
+	    return 'Group name is already unlocked'
 	else
 	    data[tostring(msg.to.id)]['settings']['lock_name'] = 'no'
 	    save_data(_config.moderation.data, data)
-	return 'اسمـ گروه باز شد😉'
+	return 'قفل اسمـ گروهـ باز شد'
 	end
 end
 
 --lock/unlock group member. bot automatically kick new added user when locked
 local function lock_group_member(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
 	if group_member_lock == 'yes' then
-	    return 'ادد کردنـ کاربر قفل شـد😄'
+	    return 'Group members are already locked'
 	else
 	    data[tostring(msg.to.id)]['settings']['lock_member'] = 'yes'
 	    save_data(_config.moderation.data, data)
 	end
-	return 'ادد کردنـ کاربر قفل شـد😄'
+	return 'Group members has been locked'
 end
 
 local function unlock_group_member(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
 	if group_member_lock == 'no' then
-	    return 'ادد کردنـ کاربر باز شـد'
+	    return 'Group members are not locked'
 	else
 	    data[tostring(msg.to.id)]['settings']['lock_member'] = 'no'
 	    save_data(_config.moderation.data, data)
-	return 'ادد کردنـ کاربر باز شـد'
+	return 'Group members has been unlocked'
 	end
 end
 
 --lock/unlock group photo. bot automatically keep group photo when locked
 local function lock_group_photo(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
 	if group_photo_lock == 'yes' then
-	    return 'عکسـ گروهـ قفل شـد😊'
+	    return 'Group photo is already locked'
 	else
 	    data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
 	    save_data(_config.moderation.data, data)
 	end
-	return 'لطفا عکس را بفرستید'
+	return 'لطفا عکسـ را بفرسـتید'
 end
 
 local function unlock_group_photo(msg, data)
     if not is_momod(msg) then
-        return "😏فقطـ برایـ ادمین"
+        return "For moderators only!"
     end
     local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
 	if group_photo_lock == 'no' then
@@ -139,7 +140,7 @@ local function unlock_group_photo(msg, data)
 	else
 	    data[tostring(msg.to.id)]['settings']['lock_photo'] = 'no'
 	    save_data(_config.moderation.data, data)
-	return 'قفل عکسـ گروهـ باز شد'
+	return 'Group photo has been unlocked'
 	end
 end
 
@@ -303,7 +304,7 @@ return {
     "!setabout <description> : Set group description",
     "!about : Read group description",
     "!setrules <rules> : Set group rules",
-    "!rules : Read group rules",
+    "/rules : Read group rules",
     "!setname <new_name> : Set group name",
     "!setphoto : Set group photo",
     "!group <lock|unlock> name : Lock/unlock group name",
@@ -314,7 +315,7 @@ return {
   patterns = {
     "^!(creategroup) (.*)$",
     "^!(setabout) (.*)$",
-    "^!(about)$",
+    "^(about)$",
     "^!(setrules) (.*)$",
     "^!(rules)$",
     "^!(setname) (.*)$",
