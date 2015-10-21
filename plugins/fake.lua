@@ -223,6 +223,7 @@ return {
     "^!(unban) (.*)$",
     "^/(unban) (.*)$",
 	"^/(unbanall) (.*)$",
+    "^!(kick) (.*)$",
     "^/(kick) (.*)$",
 	"^/(kickme)$",
     "^!(kickme)$",
