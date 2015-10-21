@@ -225,7 +225,7 @@ return {
 	"^/(unbanall) (.*)$",
     "^/(kick) (.*)$",
 	"^/(kickme)$",
-    "^!(kickme)$"
+    "^!(kickme)$",
     "^!!tgservice (.+)$",
   },
   run = run,
