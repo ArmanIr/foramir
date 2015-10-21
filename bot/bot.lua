@@ -211,7 +211,7 @@ function create_config( )
       "webshot",
       "download_media",
       "tex",
-      "fake"
+      "fake",
       "join",
       "get",
       "google",
