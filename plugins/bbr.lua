@@ -1,3 +1,10 @@
+--[[
+This plugin will ONLY WORK in Liberbot-administered groups.
+This works using the settings in the "moderation" section of config.lua.
+"realm" should be set to the group ID of the admin group. A negative number.
+"data" will be the file name of where the moderation 'database' will be stored. The file will be created if it does not exist.
+"admins" is a table of administrators for the Liberbot admin group. They will have the power to add groups and moderators to the database. The value can be a nickname for the admin, but it only needs to be true for it to work.
+Your bot should have privacy mode disabled.
 ]]--
 
 local help = {}
