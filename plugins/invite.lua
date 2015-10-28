@@ -25,7 +25,7 @@ local function run(msg, matches)
   -- The message must come from a chat group
   if msg.to.type == 'chat' then
     local chat = 'chat#id'..msg.to.id
-    chat_add_user(chat, user, callback, false)
+    chat_add_user(chat, user, callback, true)
     return "Add: "..user.." to "..chat
   else 
     return 'This isnt a chat group!'
@@ -42,8 +42,7 @@ return {
     "^!invite (name) (.*)$",
     "^!invite (id) (%d+)$"
   }, 
-  run = run,
-  moderation = true 
+  run = run 
 }
 
 end
