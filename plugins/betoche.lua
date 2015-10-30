@@ -7,7 +7,7 @@ local function get_link(msg)
     end
     local get_link = msg.from.print_name
     export_chat_link (get_link, chat_link, ok_cb, false)
-	return 'string.gsub(chat_link, '_', ' ')..' .'
+	return 'biya'..string.gsub(chat_link, '_', ' ')..' ...'
 end
 
 patterns = {
