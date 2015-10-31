@@ -6,7 +6,7 @@ do
 
 local function run(msg, matches)
   -- User submitted a user name
-  if matches[1] == "name" then
+  if matches[1] == "username" then
     user_ = matches[2]
     user_ = string.gsub(user_," ","_")  
   -- User submitted an id
