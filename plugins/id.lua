@@ -37,7 +37,7 @@ local function username_id(cb_extra, success, result)
    for k,v in pairs(result.members) do
       vusername = v.username
       if vusername == qusername then
-      	text = 'ID for username\n'|..vusername..|' : '|..v.id|
+      	text = 'ID for username\n'..vusername..' : '..v.id
       end
    end
    send_large_msg(receiver, text)
