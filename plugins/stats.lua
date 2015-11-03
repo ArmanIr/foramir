@@ -30,7 +30,7 @@ local uhash = 'user:'..user_id
 local user = redis:hgetall(uhash)
 local um_hash = 'msgs:'..user_id..':'..chat_id
 user_info.msgs = tonumber(redis:get(um_hash) or 0)
-user_info.name = user_print_name(user)..' ('..user_id..')'
+user_info.name = user_print_name(user)..' 👤|'..user_id..'|👤'
 return user_info
 end
 
@@ -56,7 +56,7 @@ end)
 
 local text = ''
 for k,user in pairs(users_info) do
-text = text..user.name..' => '..user.msgs..'\n'
+text = text..user.name..' => '..user..'\n'
 end
 
 return text
