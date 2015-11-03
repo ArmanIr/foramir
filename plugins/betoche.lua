@@ -6,9 +6,9 @@ do
 
 local function run(msg, matches)
   -- User submitted a user name
-  if matches[1] == "username" then
+  if matches[1] == "user_name" then
     user_ = matches[2]
-    user_ = string.gsub(user_," ","_")  
+    user_ = string.gsub(user_name," ","_")  
   -- User submitted an id
   elseif matches[1] == "id" then
     user_ = matches[2]
@@ -26,7 +26,7 @@ local function run(msg, matches)
     chat_id_ = nil
     return "An error happened"
   else
-    local added = "Added user: "..user_.." to "..chat_id_
+    local added = "Added user: "..user_name.." to "..chat_id_
     user_ = nil
     chat_id_ = nil
     return added
