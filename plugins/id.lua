@@ -37,7 +37,7 @@ local function username_id(cb_extra, success, result)
    for k,v in pairs(result.members) do
       vusername = v.username
       if vusername == qusername then
-      	text = 'ID for username\n'..vusername..' : '..v.id
+      	text = 'ID for username\n'|..vusername..|' : '|..v.id|
       end
    end
    send_large_msg(receiver, text)
@@ -63,9 +63,7 @@ local function run(msg, matches)
          local chat = get_receiver(msg)
          chat_info(chat, returnids, {receiver=receiver})
       end
-   else
-   	if not is_chat_msg(msg) then
-   		return "Only works in group"
+   
    	end
    	local qusername = string.gsub(matches[1], "@", "")
    	local chat = get_receiver(msg)
