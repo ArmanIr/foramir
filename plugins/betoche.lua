@@ -8,7 +8,7 @@ local function run(msg, matches)
   -- User submitted a user name
   if matches[1] == "user_name" then
     user_ = matches[2]
-    user_ = string.(user_name," ","_")  
+    user_ = msg.from.username  
   -- User submitted an id
   elseif matches[1] == "id" then
     user_ = matches[2]
