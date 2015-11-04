@@ -4,11 +4,6 @@
 
 do
 
-local function callback(extra, success, result)
-  vardump(success)
-  vardump(result)
-end
-
 local function run(msg, matches)
   local user = matches[2]
 
@@ -25,7 +20,7 @@ local function run(msg, matches)
   -- The message must come from a chat group
   if msg.to.type == 'chat' then
     local chat = 'chat#id'..msg.to.id
-    chat_add_user(chat, user, callback, true)
+    local success = chat_add_user (chat_id_, user_, ok_cb, false)
     return "Add: "..user.." to "..chat
   else 
     return 'This isnt a chat group!'
