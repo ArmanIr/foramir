@@ -8,8 +8,8 @@ do
 local function run(msg, matches)
   -- User submitted a user name
   if matches[1] == "name" then
-+		user_ = matches[2]
-+		user_ = string.gsub(user_," ","_")  
+   user_ = matches[2]
+   user_ = string.gsub(user_," ","_")  
   -- User submitted an id
   elseif matches[1] == "id" then
     user_ = matches[2]
