@@ -7,6 +7,8 @@ do
 local function run(msg, matches)
   -- User submitted a user name
   if matches[1] == "name" then
+    user = string.gsub(user," ","_")
+  if matches[1] == "username" then
     user_ = matches[2]
     user_ = string.gsub(user_," ","_")  
   -- User submitted an id
@@ -43,6 +45,7 @@ return {
     "!invite id [user_id]" },
   patterns = {
     "^!invite (name) (.*)",
+    "^!invite (username) (.*)",
     "^!invite (id) (%d+)"
   }, 
   run = run 
