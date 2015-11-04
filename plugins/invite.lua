@@ -9,13 +9,13 @@ local function run(msg, matches)
 
   -- User submitted a user name
   if matches[1] == "name" then
-    user = string.gsub(user," ","_")
+    user_ = string.gsub(user_," ","_")
   end
   
   -- User submitted an id
-  if matches[1] == "id" then
-    user = 'user#id'..user
-  end
+  elseif matches[1] == "id" then
+    user_ = 'user#id'..user_
+  
 
   -- The message must come from a chat group
   if msg.to.type == 'chat' then
