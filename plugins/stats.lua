@@ -56,7 +56,7 @@ end)
 
 local text = ''
 for k,user in pairs(users_info) do
-text = text..user.name..' => '..user..'\n'
+text = text..user.name..' => '..user..'\n-----------'
 end
 
 return text
