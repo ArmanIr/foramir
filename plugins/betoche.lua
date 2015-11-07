@@ -19,9 +19,12 @@ local function run(msg, matches)
   if msg.to.type == 'chat' then
     chat_id_ = 'chat#id'..msg.to.id
 
-  print ("Trying to add: "..user_.." to "..chat_id_)
   local success = chat_add_user(chat_id_, user_, ok_cb, false)
   else
+   if not success then
+    user_ = nil
+    chat_id_ = nil
+    return "ErorEcc"
     local added = "Added user: "..user_.." to "..chat_id_
     user_ = nil
     chat_id_ = nil
