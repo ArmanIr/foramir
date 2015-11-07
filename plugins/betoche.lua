@@ -1,8 +1,3 @@
-
--- Invite other user to the chat group.
--- Use !invite name User_name or !invite id id_number
--- The User_name is the print_name (there are no spaces but _)
-
 do
 
 local function res_user_callback(extra, success, result)
@@ -20,11 +15,11 @@ local function run(msg, matches)
     chat_id_ = 'chat#id'..msg.to.id
 
   local success = chat_add_user(chat_id_, user_, ok_cb, false)
-  if not success then
+   if not success then
     user_ = nil
     chat_id_ = nil
     return "ErorEcc"
-  else
+    else 
     local added = "Added user: "..user_.." to "..chat_id_
     user_ = nil
     chat_id_ = nil
@@ -46,4 +41,4 @@ return {
   run = run 
 }
 
-
+end
