@@ -15,7 +15,11 @@ local function run(msg, matches)
     chat_id_ = 'chat#id'..msg.to.id
   chat_add_user(chat_id_, user_, ok_cb, false)
     return "Add: "..user_.." to "..chat_id_
-  else 
+    local added = "Added user: "..user_.." to "..chat_id_
+    user_ = nil
+    chat_id_ = nil
+    return "added"
+else 
     return 'This isnt a chat group!'
   end
 
