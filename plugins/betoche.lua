@@ -5,15 +5,14 @@
 
 do
 
+local function res_user_callback(extra, success, result)
+end
+
 local function run(msg, matches)
   -- User submitted a user name
-  if matches[1] == "name" then
-   user_ = matches[2]
-   user_ = string.gsub(user_," ","_")  
-  -- User submitted an id
-  elseif matches[1] == "id" then
-    user_ = matches[2]
-    user_ = 'user#id'..user_
+  if matches[1] == "username" then
+   local user_name =  matches[1]
+   user_ = string.gsub(user_name,"@","")  
   end
 
   -- The message must come from a chat group
@@ -21,7 +20,7 @@ local function run(msg, matches)
     chat_id_ = 'chat#id'..msg.to.id
 
   print ("Trying to add: "..user_.." to "..chat_id_)
-  local success = chat_add_user (chat_id_, user_, ok_cb, false)
+  local success = chat_add_user(chat_id_, user_, ok_cb, false)
   if not success then
     user_ = nil
     chat_id_ = nil
@@ -43,8 +42,7 @@ return {
     "!invite name [user_name]", 
     "!invite id [user_id]" },
   patterns = {
-    "^!invite (name) (.*)",
-    "^!invite (id) (%d+)"
+    "^!invite (username) (.*)"
   }, 
   run = run 
 }
