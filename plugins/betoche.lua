@@ -20,7 +20,9 @@ local function run(msg, matches)
     chat_id_ = nil
     return "ErorEcc"
     else 
-    local success = "Added user: "..user_.." to "..chat_id_
+    local success = "Added user: "..user_.." to "..chat_id_ then
+    user_ = nil
+    chat_id_ = nil
     return "added"
   end
     else 
