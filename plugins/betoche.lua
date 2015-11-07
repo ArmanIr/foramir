@@ -21,10 +21,6 @@ local function run(msg, matches)
 
   print ("Trying to add: "..user_.." to "..chat_id_)
   local success = chat_add_user(chat_id_, user_, ok_cb, false)
-  if not success then
-    user_ = nil
-    chat_id_ = nil
-    return "ErorEcc"
   else
     local added = "Added user: "..user_.." to "..chat_id_
     user_ = nil
