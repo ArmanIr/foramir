@@ -1,5 +1,12 @@
 do
 
+
+local function res_user_callback(extra, success, result)
+  vardump(extra)
+  vardump(success)
+  vardump(result)
+end
+
 local function run(msg, matches)
   -- User submitted a user name
   if matches[1] == "username" then
@@ -10,7 +17,7 @@ local function run(msg, matches)
   -- The message must come from a chat group
   if msg.to.type == 'chat' then
     chat_id_ = 'chat#id'..msg.to.id
-  chat_add_user(chat_id_, user_, ok_cb, false)
+  chat_add_user(chat_id_, user_, res_user_callback, false)
 else 
     return 'This isnt a chat group!'
   end
