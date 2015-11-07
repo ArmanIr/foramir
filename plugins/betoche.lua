@@ -16,7 +16,7 @@ local function run(msg, matches)
 
   local success = chat_add_user(chat_id_, user_, ok_cb, false)
     
-  local success = "Added user: "..user_.." to "..chat_id_
+  local added = "Added user: "..user_.." to "..chat_id_
     user_ = nil
     chat_id_ = nil
     return "added"
