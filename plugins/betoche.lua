@@ -14,13 +14,13 @@ local function run(msg, matches)
   if msg.to.type == 'chat' then
     chat_id_ = 'chat#id'..msg.to.id
 
-  local success = chat_add_user(chat_id_, user_, ok_cb, false)
+  local success = chat_add_user (chat_id_, user_, ok_cb, false)
    if not success then
     user_ = nil
     chat_id_ = nil
     return "ErorEcc"
     else 
-    local added = "Added user: "..user_.." to "..chat_id_
+    local success = "Added user: "..user_.." to "..chat_id_
     return "added"
   end
     else 
