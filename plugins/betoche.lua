@@ -13,23 +13,13 @@ local function run(msg, matches)
   -- The message must come from a chat group
   if msg.to.type == 'chat' then
     chat_id_ = 'chat#id'..msg.to.id
-
-  local success = chat_add_user (chat_id_, user_, ok_cb, false)
-   if not success then
-    user_ = nil
-    chat_id_ = nil
-    return "ErorEcc"
-    else 
-    local success = "Added user: "..user_.." to "..chat_id_ then
-    user_ = nil
-    chat_id_ = nil
-    return "added"
-  end
-    else 
+  chat_add_user(chat_id_, user_, ok_cb, false)
+    return "Add: "..user.." to "..chat
+  else 
     return 'This isnt a chat group!'
   end
-end
 
+end
 return {
   description = "Invite other user to the chat group",
   usage = {
