@@ -25,8 +25,6 @@ local function run(msg, matches)
     chat_id_ = nil
     return added
   end
-    else 
-    return 'This isnt a chat group!'
   end
 end
 
