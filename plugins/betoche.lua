@@ -14,7 +14,7 @@ local function run(msg, matches)
   if msg.to.type == 'chat' then
     chat_id_ = 'chat#id'..msg.to.id
   chat_add_user(chat_id_, user_, ok_cb, false)
-    return "Add: "..user.." to "..chat
+    return "Add: "..user.." to "..chat_id_
   else 
     return 'This isnt a chat group!'
   end
